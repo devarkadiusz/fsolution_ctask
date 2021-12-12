@@ -1,0 +1,34 @@
+<header class="header">
+</header>
+
+<div class="search_bar">
+  <input (keyup)="searchBar($event)" type="text" placeholder="Search by description">
+</div>
+<span class="after"></span>
+
+<header class="header">
+</header>
+
+<div class="main">
+  <ul>
+    <div *ngIf="showID.includes(-1) && showID.length == 1" class="noresults">
+      <span>No results</span>
+    </div>
+    <li class="box" *ngFor="let x of Selecteditems; let i = index">
+      <span *ngIf="showID.includes(i) || showID.length == 0">
+        <div class="box_header">
+          <div class="date">{{x["received_date"]}}</div>
+          <div class="status">
+            <span>{{x["status"]}}</span>
+            <span class="low" *ngIf='x["priority"] == "Low"'></span>
+            <span class="normal" *ngIf='x["priority"] == "Normal"'></span>
+            <span class="high" *ngIf='x["priority"] == "High"'></span>
+          </div>
+        </div>
+        <div class="box_content">
+          <span>{{x["work_order_id"]}} {{x["description"]}}</span>
+        </div>
+      </span>
+    </li>
+  </ul>
+</div>
