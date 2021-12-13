@@ -110,7 +110,18 @@
             }
         }
         .box_content {
-            color: rgb(88, 88, 88);
+            .assigned_to {
+                margin: 10px 0;
+                padding: 0;
+                li {
+                    color: rgb(88, 88, 88);
+                    margin: 3px 3px 0 0;
+                    padding: 3px 6px;
+                    font-size: 11px;
+                    border-radius: 4px;
+                    background-color: rgba(223, 223, 223, .2);
+                }                
+            }
         }
     }
 }
