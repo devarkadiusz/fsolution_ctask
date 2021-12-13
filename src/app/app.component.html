@@ -11,7 +11,7 @@
 
 <div class="main">
   <ul>
-    <div *ngIf="showID.includes(-1) && showID.length == 1" class="noresults">
+    <div *ngIf="Selecteditems.length == 0" class="noresults">
       <span>No results</span>
     </div>
     <li class="box" *ngFor="let x of Selecteditems; let i = index">
@@ -19,14 +19,19 @@
         <div class="box_header">
           <div class="date">{{x["received_date"]}}</div>
           <div class="status">
-            <span>{{x["status"]}}</span>
+            <span>{{x["work_order_id"]}} {{x["status"]}}</span>
             <span class="low" *ngIf='x["priority"] == "Low"'></span>
             <span class="normal" *ngIf='x["priority"] == "Normal"'></span>
             <span class="high" *ngIf='x["priority"] == "High"'></span>
           </div>
         </div>
         <div class="box_content">
-          <span>{{x["work_order_id"]}} {{x["description"]}}</span>
+          <ul class="assigned_to">
+            <li *ngFor="let to of x['assigned_to']">
+              {{to["person_name"]}}
+            </li>
+          </ul>
+          <span>{{x["description"]}}</span>
         </div>
       </span>
     </li>
