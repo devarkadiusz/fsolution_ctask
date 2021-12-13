@@ -29,4 +29,4 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 ### Some screenshoot
 ![screenshot1](./src/assets/screenshot1.png)
-![screenshot2](./sec/assets/screenshot2.png)
+![screenshot2](./src/assets/screenshot2.png)
